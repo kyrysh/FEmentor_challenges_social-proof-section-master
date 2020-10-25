@@ -1,0 +1,212 @@
+/* VARIABLES */
+:root {
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    --light-greyish-magenta: hsl(300, 24%, 96%);
+    --dark-greyish-magenta: hsl(303, 10%, 53%);
+
+}
+
+
+/* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Spartan', sans-serif;
+    font-size: 15px;
+    height: 100vh;
+
+    background: url(images/bg-pattern-top-desktop.svg) no-repeat, url(images/bg-pattern-bottom-desktop.svg) bottom right no-repeat;
+}
+
+/* putting wrapper in the middle of the page */
+.wrapper {
+    padding-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+ 
+}
+
+
+/* SHOWCASE (header+ratings) */
+.showcase-container {
+    width: 70%;
+    margin-bottom: 3%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.showcase-container header {
+    min-width: 200px;
+    flex-basis: calc(100% / 2 - 1rem);
+    flex-grow: 1;
+
+    margin-right: 1rem;
+    padding-right: 1rem;
+}
+
+.showcase-container .ratings {
+    flex-basis: 50%;
+    flex-grow: 1.5;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.showcase-container header h1 {
+    color: var(--very-dark-magenta);
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.showcase-container header p {
+    line-height: 1.7;
+}
+
+.showcase-container .ratings .rating-line {
+    background: var(--light-greyish-magenta);
+    border-radius: 7px;
+    width: 80%;
+    min-width: 250px;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.showcase-container .ratings .rating-line:nth-child(2) {
+    align-self: center;
+}
+
+.showcase-container .ratings .rating-line:nth-child(3) {
+    align-self: flex-end;
+}
+
+.showcase-container .ratings .rating-line .rating-stars  {
+    margin-right: 1rem;
+}
+
+.showcase-container .ratings .rating-line p {
+    color: var(--very-dark-magenta);
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding-top: 2.5px;
+}
+
+
+
+
+/* REVIEWS (review cards) */
+.reviews {
+    width: 70%;
+    min-height: 17rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.reviews .review-card {
+    background: var(--very-dark-magenta);
+    font-size: 0.8rem;
+    line-height: 1.7;
+    border-radius: 10px;
+   
+    padding: 2rem;
+    min-width: 250px;
+    flex-basis: 31%;
+    min-height: 14rem;
+    margin-bottom: 1rem;
+}
+
+.reviews .review-card:nth-child(2) {
+    align-self: center;
+}
+
+.reviews .review-card:nth-child(3) {
+    align-self: flex-end;
+}
+
+.reviews .review-card img {
+    border-radius: 50%;
+    width: 40px;
+    float: left;
+    margin-right: 1.5rem;
+}
+
+.reviews .review-card .buyer-name {
+    color: var(--light-greyish-magenta);
+    font-weight: 500;
+}
+
+.reviews .review-card .buyer-class {
+    color: var(--soft-pink);
+}
+
+.reviews .review-card .buyer-review {
+    color: var(--light-greyish-magenta);
+    font-size: 0.75rem;
+    margin-top: 1rem;
+}
+
+
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1100px) {
+    .reviews {
+        justify-content: space-between;
+        align-content: space-between;
+    }
+
+    .reviews .review-card {
+        flex-basis: 48%;
+    }
+
+    .showcase-container header h1 {
+        font-size: 2.7rem;
+    }
+
+    .reviews {
+        justify-content: space-between;
+        align-content: space-between;
+    }
+
+    .reviews .review-card {
+        flex-basis: 48%;
+    }
+}
+
+@media screen and (max-width: 925px) {
+    .showcase-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .showcase-container header {
+        margin-bottom: 2rem;
+        margin-right: 0;
+        padding-right: 0;
+    }
+}
+
+
+@media screen and (max-width: 750px) {
+    .reviews .review-card {
+        flex-basis: 100%;
+        min-height: 10rem;
+    }
+
+    .showcase-container .ratings .rating-line {
+        width: 100%;
+        margin-bottom: 1rem;
+        justify-content: center;
+    }
+}
